@@ -9,9 +9,9 @@
 		configure as beans -->
 	<context:component-scan base-package="service" />
 
-	<bean id="zosia" class="domain.Person">
-		<property name="firstName" value="Zosia" />
-		<property name="yob" value="1987" />
+	<bean id="henryk" class="domain.Person">
+		<property name="firstName" value="Henryk" />
+		<property name="yob" value="1964" />
 	</bean>
 
 </beans>
