@@ -1,4 +1,13 @@
-springdemo
-==========
+## TUD_02 - Spring - 2017/2018 ##
 
-Simple sample spring demo with test
+Dane studenta
+
+| Imię i nazwisko   | Numer Indeksu | Grupa |
+|-------------------|---------------|-------|
+| Mariusz Mazepa    | 235371        | 2     |
+
+Dane projektu
+
+| Przedmiot                                     | Projek    | Tematyka  |
+|-----------------------------------------------|-----------|-----------|
+| Technologie utrwalania danych dla języka Java | 2 (Drugi) | Spring    |

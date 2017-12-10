@@ -2,7 +2,7 @@ package domain;
 
 public class Child extends Person {
 
-	private String childInfo = "Jestem synem!";
+	private String childInfo = "I'm son!";
 
 	public String getChildInfo() {
 		return childInfo;

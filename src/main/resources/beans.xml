@@ -9,9 +9,27 @@
 		configure as beans -->
 	<context:component-scan base-package="service" />
 
-	<bean id="henryk" class="domain.Person">
+	<bean id="person01" class="domain.Person">
 		<property name="firstName" value="Henryk" />
 		<property name="yob" value="1964" />
 	</bean>
+
+  <bean id="grandpa01" class="domain.Grandparent">
+		<property name="firstName" value="Janusz" />
+		<property name="yob" value="1950" />
+    <property name="grandparentInfo" value="I'm grandpa!" />
+	</bean>
+
+  <bean id="parent01" class="domain.Parent">
+    <property name="firstName" value="Sebastian" />
+    <property name="yob" value="1970" />
+    <property name="parentInfo" value="I'm daddy!" />
+  </bean>
+
+  <bean id="child01" class="domain.Child">
+    <property name="firstName" value="Brajan" />
+    <property name="yob" value="1990" />
+    <property name="childInfo" value="I'm son!" />
+  </bean>
 
 </beans>

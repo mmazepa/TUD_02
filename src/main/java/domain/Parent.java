@@ -2,7 +2,7 @@ package domain;
 
 public class Parent extends Person {
 
-	private String parentInfo = "Jestem ojcem!";
+	private String parentInfo = "I'm daddy!";
 
 	public String getParentInfo() {
 		return parentInfo;

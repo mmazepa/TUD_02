@@ -10,20 +10,22 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:/beans.xml" })
-public class PersonManagerTest {
+public class ChildManagerTest {
 
 	@Autowired
-	private PersonManager pm;
+	private ChildManager cm;
 
 	@Test
-	public void personSayHelloTest() {
+	public void childSayHelloTest() {
     System.out.println("");
-    System.out.println("   [PERSON_SAY_HELLO_TEST]");
+    System.out.println("   [CHILD_SAY_HELLO_TEST]");
     System.out.println("   -------------------------------------");
-		assertEquals("I'm Henryk!", pm.sayName());
-    System.out.println("   [SAY_HELLO_TEST]: " + pm.sayName());
-    assertEquals("I was born in 1964!", pm.sayYob());
-    System.out.println("   [SAY_HELLO_TEST]: " + pm.sayYob());
+		assertEquals("I'm Brajan!", cm.sayName());
+    System.out.println("   [SAY_HELLO_TEST]: " + cm.sayName());
+    assertEquals("I was born in 1990!", cm.sayYob());
+    System.out.println("   [SAY_HELLO_TEST]: " + cm.sayYob());
+    assertEquals("I'm son!", cm.sayInfo());
+    System.out.println("   [SAY_HELLO_TEST]: " + cm.sayInfo());
     System.out.println("   -------------------------------------");
 	}
 
