@@ -19,6 +19,11 @@ public class PersonManager implements PersonManagerInterface {
 	}
 
   @Override
+  public String sayGender(){
+    return "I'm " + person.getGender() + "!";
+  }
+
+  @Override
   public String sayYob() {
     return "I was born in " + person.getYob() + "!";
   }

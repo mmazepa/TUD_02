@@ -21,9 +21,11 @@ public class PersonManagerTest {
     System.out.println("   [PERSON_SAY_HELLO_TEST]");
     System.out.println("   -------------------------------------");
 		assertEquals("I'm Henryk!", pm.sayName());
-    System.out.println("   [SAY_HELLO_TEST]: " + pm.sayName());
+    System.out.println("   [PERSON]: " + pm.sayName());
+    assertEquals("I'm Male!", pm.sayGender());
+    System.out.println("   [PERSON]: " + pm.sayGender());
     assertEquals("I was born in 1964!", pm.sayYob());
-    System.out.println("   [SAY_HELLO_TEST]: " + pm.sayYob());
+    System.out.println("   [PERSON]: " + pm.sayYob());
     System.out.println("   -------------------------------------");
 	}
 

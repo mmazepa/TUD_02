@@ -11,21 +11,26 @@ public class ParentManager implements ParentManagerInterface {
 
 	@Autowired
   @Qualifier("parent01")
-	private Parent daddy;
+	private Parent parent;
 
   @Override
 	public String sayName() {
-		return "I'm " + daddy.getFirstName() + "!";
+		return "I'm " + parent.getFirstName() + "!";
 	}
 
   @Override
+  public String sayGender(){
+    return "I'm " + parent.getGender() + "!";
+  }
+
+  @Override
   public String sayYob() {
-    return "I was born in " + daddy.getYob() + "!";
+    return "I was born in " + parent.getYob() + "!";
   }
 
   @Override
   public String sayInfo() {
-    return daddy.getParentInfo();
+    return parent.getParentInfo();
   }
 
 }

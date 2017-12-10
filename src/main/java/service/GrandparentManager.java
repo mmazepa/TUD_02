@@ -11,21 +11,26 @@ public class GrandparentManager implements GrandparentManagerInterface {
 
 	@Autowired
   @Qualifier("grandpa01")
-	private Grandparent grandpa;
+	private Grandparent grandparent;
 
   @Override
 	public String sayName() {
-		return "I'm " + grandpa.getFirstName() + "!";
+		return "I'm " + grandparent.getFirstName() + "!";
 	}
 
   @Override
+  public String sayGender(){
+    return "I'm " + grandparent.getGender() + "!";
+  }
+
+  @Override
   public String sayYob() {
-    return "I was born in " + grandpa.getYob() + "!";
+    return "I was born in " + grandparent.getYob() + "!";
   }
 
   @Override
   public String sayInfo() {
-    return grandpa.getGrandparentInfo();
+    return grandparent.getGrandparentInfo();
   }
 
 }

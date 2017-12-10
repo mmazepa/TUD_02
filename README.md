@@ -8,6 +8,6 @@ Dane studenta
 
 Dane projektu
 
-| Przedmiot                                     | Projek    | Tematyka  |
+| Przedmiot                                     | Projekt   | Tematyka  |
 |-----------------------------------------------|-----------|-----------|
 | Technologie utrwalania danych dla języka Java | 2 (Drugi) | Spring    |

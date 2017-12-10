@@ -11,21 +11,26 @@ public class ChildManager implements ChildManagerInterface {
 
 	@Autowired
   @Qualifier("child01")
-	private Child son;
+	private Child child;
 
   @Override
 	public String sayName() {
-		return "I'm " + son.getFirstName() + "!";
+		return "I'm " + child.getFirstName() + "!";
 	}
 
   @Override
+  public String sayGender(){
+    return "I'm " + child.getGender() + "!";
+  }
+
+  @Override
   public String sayYob() {
-    return "I was born in " + son.getYob() + "!";
+    return "I was born in " + child.getYob() + "!";
   }
 
   @Override
   public String sayInfo() {
-    return son.getChildInfo();
+    return child.getChildInfo();
   }
 
 }

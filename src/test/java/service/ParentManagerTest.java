@@ -21,11 +21,13 @@ public class ParentManagerTest {
     System.out.println("   [PARENT_SAY_HELLO_TEST]");
     System.out.println("   -------------------------------------");
 		assertEquals("I'm Sebastian!", pm.sayName());
-    System.out.println("   [SAY_HELLO_TEST]: " + pm.sayName());
+    System.out.println("   [PARENT]: " + pm.sayName());
+    assertEquals("I'm Male!", pm.sayGender());
+    System.out.println("   [PARENT]: " + pm.sayGender());
     assertEquals("I was born in 1970!", pm.sayYob());
-    System.out.println("   [SAY_HELLO_TEST]: " + pm.sayYob());
+    System.out.println("   [PARENT]: " + pm.sayYob());
     assertEquals("I'm daddy!", pm.sayInfo());
-    System.out.println("   [SAY_HELLO_TEST]: " + pm.sayInfo());
+    System.out.println("   [PARENT]: " + pm.sayInfo());
     System.out.println("   -------------------------------------");
 	}
 
