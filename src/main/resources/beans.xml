@@ -12,7 +12,7 @@
 	<bean id="person01" class="domain.FamilyMember">
 		<property name="firstName" value="Henryk" />
     <property name="gender" value="Male" />
-		<property name="yob" value="1954" />
+		<property name="yob" value="1894" />
     <property name="child">
       <ref bean="person02"/>
     </property>
@@ -21,7 +21,10 @@
   <bean id="person02" class="domain.FamilyMember">
     <property name="firstName" value="Franciszek" />
     <property name="gender" value="Male" />
-    <property name="yob" value="1984" />
+    <property name="yob" value="1924" />
+    <property name="parent">
+      <ref bean="person01"/>
+    </property>
     <property name="child">
       <ref bean="person03"/>
     </property>
@@ -30,7 +33,34 @@
   <bean id="person03" class="domain.FamilyMember">
     <property name="firstName" value="Michał" />
     <property name="gender" value="Male" />
-    <property name="yob" value="2015" />
+    <property name="yob" value="1954" />
+    <property name="parent">
+      <ref bean="person02"/>
+    </property>
+    <property name="child">
+      <ref bean="person04"/>
+    </property>
+  </bean>
+
+  <bean id="person04" class="domain.FamilyMember">
+    <property name="firstName" value="Karolina" />
+    <property name="gender" value="Female" />
+    <property name="yob" value="1984" />
+    <property name="parent">
+      <ref bean="person03"/>
+    </property>
+    <property name="child">
+      <ref bean="person05"/>
+    </property>
+  </bean>
+
+  <bean id="person05" class="domain.FamilyMember">
+    <property name="firstName" value="Zofia" />
+    <property name="gender" value="Female" />
+    <property name="yob" value="2014" />
+    <property name="parent">
+      <ref bean="person04"/>
+    </property>
   </bean>
 
 </beans>

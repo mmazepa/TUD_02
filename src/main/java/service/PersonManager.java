@@ -29,11 +29,21 @@ public class PersonManager implements PersonManagerInterface {
   @Qualifier("person03")
   private FamilyMember person03;
 
+  @Autowired
+  @Qualifier("person04")
+  private FamilyMember person04;
+
+  @Autowired
+  @Qualifier("person05")
+  private FamilyMember person05;
+
   @Override
 	public String sayName(String qualifier) {
     if(qualifier == "person01") return "I'm " + person01.getFirstName() + "!";
     if(qualifier == "person02") return "I'm " + person02.getFirstName() + "!";
     if(qualifier == "person03") return "I'm " + person03.getFirstName() + "!";
+    if(qualifier == "person04") return "I'm " + person04.getFirstName() + "!";
+    if(qualifier == "person05") return "I'm " + person05.getFirstName() + "!";
     return "Person not found!";
 	}
 
@@ -42,6 +52,8 @@ public class PersonManager implements PersonManagerInterface {
     if(qualifier == "person01") return "I'm " + person01.getGender() + "!";
     if(qualifier == "person02") return "I'm " + person02.getGender() + "!";
     if(qualifier == "person03") return "I'm " + person03.getGender() + "!";
+    if(qualifier == "person04") return "I'm " + person04.getGender() + "!";
+    if(qualifier == "person05") return "I'm " + person05.getGender() + "!";
     return "Person not found!";
   }
 
@@ -50,15 +62,37 @@ public class PersonManager implements PersonManagerInterface {
     if(qualifier == "person01") return "I was born in " + person01.getYob() + "!";
     if(qualifier == "person02") return "I was born in " + person02.getYob() + "!";
     if(qualifier == "person03") return "I was born in " + person03.getYob() + "!";
+    if(qualifier == "person04") return "I was born in " + person04.getYob() + "!";
+    if(qualifier == "person05") return "I was born in " + person05.getYob() + "!";
     return "Person not found!";
   }
 
   @Override
-  public String sayFamily(String qualifier) {
+  public String sayParent(String qualifier) {
+    if(qualifier == "person01") return hasParent(person01.getParent().getFirstName());
+    if(qualifier == "person02") return hasParent(person02.getParent().getFirstName());
+    if(qualifier == "person03") return hasParent(person03.getParent().getFirstName());
+    if(qualifier == "person04") return hasParent(person04.getParent().getFirstName());
+    if(qualifier == "person05") return hasParent(person05.getParent().getFirstName());
+    return "Person not found!";
+  }
+
+  @Override
+  public String sayChild(String qualifier) {
     if(qualifier == "person01") return hasChild(person01.getChild().getFirstName());
     if(qualifier == "person02") return hasChild(person02.getChild().getFirstName());
     if(qualifier == "person03") return hasChild(person03.getChild().getFirstName());
+    if(qualifier == "person04") return hasChild(person04.getChild().getFirstName());
+    if(qualifier == "person05") return hasChild(person05.getChild().getFirstName());
     return "Person not found!";
+  }
+
+  @Override
+  public String hasParent(String parentName) {
+    if (parentName != null && parentName != "") {
+      return "My parent name is " + parentName + "!";
+    }
+    return "I don't have a parent!";
   }
 
   @Override
@@ -80,16 +114,18 @@ public class PersonManager implements PersonManagerInterface {
 
   @Override
   public void displayPersonInfo(String qualifier) {
-    System.out.println("   " + colorizeText("-------------------------------------", "red", false));
+    System.out.println("   " + colorizeText("------------------------------------------", "red", false));
     // SAY NAME
-    System.out.println("      " + sayName(qualifier));
+    System.out.println("      " + colorizeText("[NAME]:", "white", false) + "   " + sayName(qualifier));
     // SAY GENDER
-    System.out.println("      " + sayGender(qualifier));
+    System.out.println("      " + colorizeText("[GENDER]:", "white", false) + " " + sayGender(qualifier));
     // SAY YOB
-    System.out.println("      " + sayYob(qualifier));
-    // SAY FAMILY
-    System.out.println("      " + sayFamily(qualifier));
-    System.out.println("   " + colorizeText("-------------------------------------", "red", false));
+    System.out.println("      " + colorizeText("[YOB]:", "white", false) + "    " + sayYob(qualifier));
+    // SAY PARENT
+    System.out.println("      " + colorizeText("[PARENT]:", "white", false) + " " + sayParent(qualifier));
+    // SAY CHILD
+    System.out.println("      " + colorizeText("[CHILD]:", "white", false) + "  " + sayChild(qualifier));
+    System.out.println("   " + colorizeText("------------------------------------------", "red", false));
   }
 
 }
