@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import domain.Person;
-import domain.Parent;
+import domain.FamilyMember;
 
 @Component
 public class PersonManager implements PersonManagerInterface {
@@ -19,15 +19,15 @@ public class PersonManager implements PersonManagerInterface {
 
 	@Autowired
   @Qualifier("person01")
-	private Parent person01;
+	private FamilyMember person01;
 
   @Autowired
   @Qualifier("person02")
-  private Parent person02;
+  private FamilyMember person02;
 
   @Autowired
   @Qualifier("person03")
-  private Parent person03;
+  private FamilyMember person03;
 
   @Override
 	public String sayName(String qualifier) {
