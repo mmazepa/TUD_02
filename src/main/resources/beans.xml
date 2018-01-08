@@ -9,31 +9,28 @@
 		configure as beans -->
 	<context:component-scan base-package="service" />
 
-	<bean id="person01" class="domain.Person">
+	<bean id="person01" class="domain.Parent">
 		<property name="firstName" value="Henryk" />
     <property name="gender" value="Male" />
-		<property name="yob" value="1964" />
+		<property name="yob" value="1954" />
+    <property name="child">
+      <ref bean="person02"/>
+    </property>
 	</bean>
 
-  <bean id="grandpa01" class="domain.Grandparent">
-		<property name="firstName" value="Janusz" />
+  <bean id="person02" class="domain.Parent">
+    <property name="firstName" value="Franciszek" />
     <property name="gender" value="Male" />
-		<property name="yob" value="1950" />
-    <property name="grandparentInfo" value="I'm grandpa!" />
-	</bean>
-
-  <bean id="parent01" class="domain.Parent">
-    <property name="firstName" value="Sebastian" />
-    <property name="gender" value="Male" />
-    <property name="yob" value="1970" />
-    <property name="parentInfo" value="I'm daddy!" />
+    <property name="yob" value="1984" />
+    <property name="child">
+      <ref bean="person03"/>
+    </property>
   </bean>
 
-  <bean id="child01" class="domain.Child">
-    <property name="firstName" value="Brajan" />
+  <bean id="person03" class="domain.Parent">
+    <property name="firstName" value="Michał" />
     <property name="gender" value="Male" />
-    <property name="yob" value="1990" />
-    <property name="childInfo" value="I'm son!" />
+    <property name="yob" value="2015" />
   </bean>
 
 </beans>

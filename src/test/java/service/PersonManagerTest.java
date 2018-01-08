@@ -18,15 +18,32 @@ public class PersonManagerTest {
 	@Test
 	public void personSayHelloTest() {
     System.out.println("");
-    System.out.println("   [PERSON_SAY_HELLO_TEST]");
-    System.out.println("   -------------------------------------");
-		assertEquals("I'm Henryk!", pm.sayName());
-    System.out.println("   [PERSON]: " + pm.sayName());
-    assertEquals("I'm Male!", pm.sayGender());
-    System.out.println("   [PERSON]: " + pm.sayGender());
-    assertEquals("I was born in 1964!", pm.sayYob());
-    System.out.println("   [PERSON]: " + pm.sayYob());
-    System.out.println("   -------------------------------------");
+    System.out.println("   " + pm.colorizeText("[PERSON_SAY_HELLO_TEST]", "white", true));
+    System.out.println("   " + pm.colorizeText("-------------------------------------", "red", false));
+
+    // PERSON_01
+    System.out.println("   " + pm.colorizeText("[PERSON_01]:", "blue", true));
+    assertEquals("I'm Henryk!", pm.sayName("person01"));
+    assertEquals("I'm Male!", pm.sayGender("person01"));
+    assertEquals("I was born in 1954!", pm.sayYob("person01"));
+    assertEquals("My child name is Franciszek!", pm.sayFamily("person01"));
+    pm.displayPersonInfo("person01");
+
+    // PERSON_02
+    System.out.println("   " + pm.colorizeText("[PERSON_02]:", "blue", true));
+    assertEquals("I'm Franciszek!", pm.sayName("person02"));
+    assertEquals("I'm Male!", pm.sayGender("person02"));
+    assertEquals("I was born in 1984!", pm.sayYob("person02"));
+    assertEquals("My child name is Michał!", pm.sayFamily("person02"));
+    pm.displayPersonInfo("person02");
+
+    // PERSON_03
+    System.out.println("   " + pm.colorizeText("[PERSON_03]:", "blue", true));
+    assertEquals("I'm Michał!", pm.sayName("person03"));
+    assertEquals("I'm Male!", pm.sayGender("person03"));
+    assertEquals("I was born in 2015!", pm.sayYob("person03"));
+    assertEquals("I don't have a child!", pm.sayFamily("person03"));
+    pm.displayPersonInfo("person03");
 	}
 
 }

@@ -2,9 +2,19 @@ package domain;
 
 public class Person {
 
-	private String firstName = "Janusz";
-  private String gender = "Male";
-	private int yob = 1950;
+	private String firstName = "";
+  private String gender = "";
+	private int yob = 0;
+
+  public Person(String firstName, String gender, int yob) {
+    this.firstName = firstName;
+    this.gender = gender;
+    this.yob = yob;
+  }
+
+  public Person(){
+
+  }
 
 	public String getFirstName() {
 		return firstName;

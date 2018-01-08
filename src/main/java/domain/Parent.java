@@ -2,14 +2,18 @@ package domain;
 
 public class Parent extends Person {
 
-	private String parentInfo = "I'm daddy!";
+  private Person child = new Person();
 
-	public String getParentInfo() {
-		return parentInfo;
-	}
+  public Parent() {
 
-	public void setParentInfo(String ParentInfo) {
-		this.parentInfo = parentInfo;
-	}
+  }
+
+  public void setChild(Person child) {
+    this.child = child;
+  }
+
+  public Person getChild() {
+    return child;
+  }
 
 }
