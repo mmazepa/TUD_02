@@ -1,6 +1,6 @@
 package service;
 
-interface PersonManagerInterface {
+interface FamilyMemberManagerInterface {
 
   // Method for Testing
   public String sayName(String qualifier);

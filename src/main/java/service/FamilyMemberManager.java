@@ -8,7 +8,7 @@ import domain.Person;
 import domain.FamilyMember;
 
 @Component
-public class PersonManager implements PersonManagerInterface {
+public class FamilyMemberManager implements FamilyMemberManagerInterface {
 
   // Font style - color, bold and reset (console)
   public static final String ANSI_RESET = "\u001B[0m";
@@ -114,18 +114,23 @@ public class PersonManager implements PersonManagerInterface {
 
   @Override
   public void displayPersonInfo(String qualifier) {
-    System.out.println("   " + colorizeText("------------------------------------------", "red", false));
+    System.out.println("   " + colorizeText("+--------------------------------------------", "red", false));
     // SAY NAME
-    System.out.println("      " + colorizeText("[NAME]:", "white", false) + "   " + sayName(qualifier));
+    System.out.println("      " + colorizeText("|", "red", false) + " "
+    + colorizeText("[NAME]:", "white", false) + "   " + sayName(qualifier));
     // SAY GENDER
-    System.out.println("      " + colorizeText("[GENDER]:", "white", false) + " " + sayGender(qualifier));
+    System.out.println("      " + colorizeText("|", "red", false) + " "
+    + colorizeText("[GENDER]:", "white", false) + " " + sayGender(qualifier));
     // SAY YOB
-    System.out.println("      " + colorizeText("[YOB]:", "white", false) + "    " + sayYob(qualifier));
+    System.out.println("      " + colorizeText("|", "red", false) + " "
+    + colorizeText("[YOB]:", "white", false) + "    " + sayYob(qualifier));
     // SAY PARENT
-    System.out.println("      " + colorizeText("[PARENT]:", "white", false) + " " + sayParent(qualifier));
+    System.out.println("      " + colorizeText("|", "red", false) + " "
+    + colorizeText("[PARENT]:", "white", false) + " " + sayParent(qualifier));
     // SAY CHILD
-    System.out.println("      " + colorizeText("[CHILD]:", "white", false) + "  " + sayChild(qualifier));
-    System.out.println("   " + colorizeText("------------------------------------------", "red", false));
+    System.out.println("      " + colorizeText("|", "red", false) + " "
+    + colorizeText("[CHILD]:", "white", false) + "  " + sayChild(qualifier));
+    System.out.println("   " + colorizeText("+--------------------------------------------", "red", false));
   }
 
 }
